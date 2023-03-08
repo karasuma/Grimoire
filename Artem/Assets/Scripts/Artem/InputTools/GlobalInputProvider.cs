@@ -18,7 +18,7 @@ namespace Crowolf.Artem.InputTools
 		public bool Enable { get; set; } = true;
 
 		public IReadOnlyReactiveProperty<float> PushPower => _pushPower;
-		private ReactiveProperty<float> _pushPower = new ReactiveProperty<float>( 0f );
+		protected ReadOnlyReactiveProperty<float> _pushPower = default;
 
 		public IObservable<Unit> OnPushed => _onPushed;
 		private Subject<Unit> _onPushed = new Subject<Unit>();
@@ -35,15 +35,30 @@ namespace Crowolf.Artem.InputTools
 		public IReadOnlyReactiveProperty<bool> IsPushing => _isPushing.ToReadOnlyReactiveProperty();
 		private Subject<bool> _isPushing = new Subject<bool>();
 
-		public abstract int DoublePushSpanMilliseconds { get; set; }
-		public abstract int LongPushSpanMilliseconds { get; set; }
-		public abstract float PushDetectThreshold { get; set; }
+		public int DoublePushSpanMilliseconds
+		{
+			get => _doublePushSpanMilliseconds;
+			set => _doublePushSpanMilliseconds = Math.Max( 0, value );
+		}
+		private int _doublePushSpanMilliseconds = 170;
+		public int LongPushSpanMilliseconds
+		{
+			get => _longPushSpanMilliseconds;
+			set => _longPushSpanMilliseconds = Math.Max( 0, value );
+		}
+		private int _longPushSpanMilliseconds = 600;
+		public float PushDetectThreshold
+		{
+			get => _pushDetectThreshold;
+			set => _pushDetectThreshold = Mathf.Clamp( value, 0.01f, 1f );
+		}
+		private float _pushDetectThreshold = 0.05f;
 
-		protected abstract void InitializePushPowerSource();
+		protected abstract void InitializePushPowerSource( Component component );
 
 		public GlobalInputProvider( Component component )
 		{
-			InitializePushPowerSource();
+			InitializePushPowerSource( component );
 
 			var pushStateChangedSubject = new Subject<Pair<float>>();
 			_pushPower
