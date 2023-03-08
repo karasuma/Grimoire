@@ -40,7 +40,7 @@ namespace Crowolf.UnityTests
 	}
 	#endregion
 
-	public class InputTest
+	public class BasicInputTest
 	{
 		private GameObject _attachedGameObject;
 		private InputTestComponent _inputComponent;
