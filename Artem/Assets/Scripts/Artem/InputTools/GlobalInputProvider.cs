@@ -58,6 +58,11 @@ namespace Crowolf.Artem.InputTools
 
 		public GlobalInputProvider( Component component )
 		{
+			if( _pushPower != default ) // Dispose when _pushPower has initialized
+			{
+				_pushPower.Dispose();
+				_pushPower = null;
+			}
 			InitializePushPowerSource( component );
 
 			var pushStateChangedSubject = new Subject<Pair<float>>();
