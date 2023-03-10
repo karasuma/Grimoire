@@ -16,7 +16,7 @@ namespace Crowolf.Artem.Utilities
 		/// <returns>Moved value between 0 and 1</returns>
 		public static double Ease(double time, EasingType easingType, EaseInOutType easeInOutType = EaseInOutType.Both)
 		{
-			time = time < 0.0 ? time = 0.0 : time > 1.0 ? time = 1.0 : time;
+			time = time < 0.0 ? 0.0 : time > 1.0 ? 1.0 : time;
 
 			// Ease!
 			switch( easingType )
