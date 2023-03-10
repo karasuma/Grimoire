@@ -21,4 +21,10 @@ namespace Crowolf.Artem.Utilities
 		public static void RemoveComponent<T>( this GameObject self ) where T : Component
 			=> GameObject.Destroy( self.GetComponent<T>() );
 	}
+
+	public static class VectorExtensions
+	{
+		public static Vector2 ToVector2( this Vector3 self )
+			=> new Vector2( self.x, self.y );
+	}
 }

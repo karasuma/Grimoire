@@ -8,15 +8,14 @@ namespace Crowolf.Artem.InputTools
 {
 	public class KeyboardInputProvider : GlobalInputProvider
 	{
-		protected KeyCode _keyCode = default;
-
-		public KeyboardInputProvider( Component component, KeyCode key ) : base( component )
-			=> _keyCode = key;
-
-		protected override void InitializePushPowerSource( Component component )
+		public KeyboardInputProvider( Component component, KeyCode keyCode) : base( component, keyCode )
 		{
-			_pushPower = component.UpdateAsObservable()
-				.Select( _ => Enable && Input.GetKey( _keyCode ) )
+		}
+
+		protected override ReadOnlyReactiveProperty<float> InitializePushPowerSource( Component component )
+		{
+			return component.UpdateAsObservable()
+				.Select( _ => Enable && Input.GetKey( Key ) )
 				.DistinctUntilChanged()
 				.Select( pushed => pushed.BoolTo01() )
 				.ToReadOnlyReactiveProperty()

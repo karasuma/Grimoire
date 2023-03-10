@@ -8,6 +8,7 @@ namespace Crowolf.Artem.InputTools
 {
 	public enum MouseCode : int
 	{
+		None = -1,
 		Left = 0,
 		Right = 1,
 		Middle = 2
@@ -33,7 +34,7 @@ namespace Crowolf.Artem.InputTools
 		private Subject<Unit> _onReleased = new Subject<Unit>();
 
 		public IReadOnlyReactiveProperty<bool> IsPushing => _isPushing.ToReadOnlyReactiveProperty();
-		private Subject<bool> _isPushing = new Subject<bool>();
+		private ReactiveProperty<bool> _isPushing = new ReactiveProperty<bool>( false );
 
 		public int DoublePushSpanMilliseconds
 		{
@@ -54,16 +55,26 @@ namespace Crowolf.Artem.InputTools
 		}
 		private float _pushDetectThreshold = 0.05f;
 
-		protected abstract void InitializePushPowerSource( Component component );
+		public KeyCode Key => _keyCode;
+		private KeyCode _keyCode = KeyCode.None;
+		public MouseCode Mouse => _mouseCode;
+		private MouseCode _mouseCode = MouseCode.None;
 
-		public GlobalInputProvider( Component component )
+		protected abstract ReadOnlyReactiveProperty<float> InitializePushPowerSource( Component component );
+
+		public GlobalInputProvider(
+			Component component,
+			KeyCode keyCode = KeyCode.None,
+			MouseCode mouseCode = MouseCode.None )
 		{
-			if( _pushPower != default ) // Dispose when _pushPower has initialized
+			if ( _pushPower != default ) // Dispose when _pushPower has initialized
 			{
 				_pushPower.Dispose();
 				_pushPower = null;
 			}
-			InitializePushPowerSource( component );
+			_keyCode = keyCode;
+			_mouseCode = mouseCode;
+			_pushPower = InitializePushPowerSource( component );
 
 			var pushStateChangedSubject = new Subject<Pair<float>>();
 			_pushPower
@@ -78,8 +89,7 @@ namespace Crowolf.Artem.InputTools
 				.Subscribe( _onPushed )
 				.AddTo( component );
 			OnPushed
-				.Select( _ => true )
-				.Subscribe( _isPushing )
+				.Subscribe( _ => _isPushing.Value = true )
 				.AddTo( component );
 
 			// Released
@@ -89,8 +99,7 @@ namespace Crowolf.Artem.InputTools
 				.Subscribe( _onReleased )
 				.AddTo( component );
 			OnReleased
-				.Select( _ => false )
-				.Subscribe( _isPushing )
+				.Subscribe( _ => _isPushing.Value = false )
 				.AddTo( component );
 
 			// Double pushed
@@ -119,6 +128,12 @@ namespace Crowolf.Artem.InputTools
 				} );
 		}
 
+		public GlobalInputProvider( Component component, KeyCode keyCode )
+			: this( component, keyCode, MouseCode.None ) { }
+
+		public GlobalInputProvider( Component component, MouseCode mouseCode )
+			: this( component, KeyCode.None, mouseCode ) { }
+
 		#region Dispose...
 		private bool _disposed = false;
 		~GlobalInputProvider()
@@ -133,7 +148,6 @@ namespace Crowolf.Artem.InputTools
 				_onDoublePushed.OnCompleted();
 				_onLongPushed.OnCompleted();
 				_onReleased.OnCompleted();
-				_isPushing.OnCompleted();
 			} );
 			GC.SuppressFinalize( this );
 		}

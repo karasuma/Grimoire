@@ -23,9 +23,9 @@ namespace Crowolf.UnityTests
 			// Do nothing
 		}
 
-		protected override void InitializePushPowerSource( Component component )
+		protected override ReadOnlyReactiveProperty<float> InitializePushPowerSource( Component component )
 		{
-			_pushPower = component.UpdateAsObservable()
+			return component.UpdateAsObservable()
 				.Select( _ => Enable && VirtualInput )
 				.DistinctUntilChanged()
 				.Select( pushed => pushed.BoolTo01() )
