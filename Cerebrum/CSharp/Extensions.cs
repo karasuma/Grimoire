@@ -69,5 +69,21 @@ namespace Crowolf.Cerebrum
 		/// <returns></returns>
 		public static bool IsInRange( this int current, int min, int max, bool includeEdge = true )
 			=> ( (double)current ).IsInRange( min, max, includeEdge );
+
+		/// <summary>
+		/// Indicates whether a specified string is empty approximately.
+		/// </summary>
+		/// <param name="self"></param>
+		/// <returns>True if the string is empty approximately; otherwise, false.</returns>
+		public static bool IsEmptyApprox( this string self )
+			=> string.IsNullOrEmpty( self.Trim() ) || string.IsNullOrWhiteSpace( self.Trim() );
+	}
+
+	public static class Definitions
+	{
+		/// <summary>
+		/// Gets Environment.NewLine
+		/// </summary>
+		public static string NewLine => Environment.NewLine;
 	}
 }
