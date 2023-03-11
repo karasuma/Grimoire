@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1479
     height: 988
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Test Runner
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 116
+  controlID: 106
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 86
+  controlID: 75
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,8 +145,8 @@ MonoBehaviour:
     y: 0
     width: 292
     height: 567
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 20
+  controlID: 76
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 21
+  controlID: 77
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -356,7 +356,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 162
+    ID: 164
     splitterInitialOffset: 427
     currentActiveSplitter: -1
     realSizes:
@@ -379,7 +379,7 @@ MonoBehaviour:
     oldMinSizes: 
     oldMaxSizes: 
     oldSplitSize: 0
-  m_TestTypeToolbarIndex: 0
+  m_TestTypeToolbarIndex: 1
   m_PlayModeTestListGUI:
     m_Window: {fileID: 14}
     m_NewResultList:
@@ -388,7 +388,7 @@ MonoBehaviour:
       name: Artem
       fullName: Artem
       resultStatus: 1
-      duration: 1.7795285
+      duration: 1.7776892
       messages: 
       output: 
       stacktrace: 
@@ -404,7 +404,7 @@ MonoBehaviour:
       name: UnityTests.dll
       fullName: L:/Projects/Crowolf/Grimoire/Artem/Library/ScriptAssemblies/UnityTests.dll
       resultStatus: 1
-      duration: 1.7288789
+      duration: 1.7332416
       messages: 
       output: 
       stacktrace: 
@@ -420,7 +420,7 @@ MonoBehaviour:
       name: Crowolf
       fullName: Crowolf
       resultStatus: 1
-      duration: 1.722205
+      duration: 1.7234975
       messages: 
       output: 
       stacktrace: 
@@ -436,7 +436,7 @@ MonoBehaviour:
       name: UnityTests
       fullName: Crowolf.UnityTests
       resultStatus: 1
-      duration: 1.7196168
+      duration: 1.7212859
       messages: 
       output: 
       stacktrace: 
@@ -452,7 +452,7 @@ MonoBehaviour:
       name: BasicInputTest
       fullName: Crowolf.UnityTests.BasicInputTest
       resultStatus: 1
-      duration: 1.715401
+      duration: 1.7174742
       messages: 
       output: 
       stacktrace: 
@@ -468,7 +468,7 @@ MonoBehaviour:
       name: OnDoublePushed
       fullName: Crowolf.UnityTests.BasicInputTest.OnDoublePushed
       resultStatus: 1
-      duration: 1.2847999
+      duration: 1.2831978
       messages: 
       output: 
       stacktrace: 
@@ -485,7 +485,7 @@ MonoBehaviour:
       name: OnLongPushed
       fullName: Crowolf.UnityTests.BasicInputTest.OnLongPushed
       resultStatus: 1
-      duration: 0.361719
+      duration: 0.3650268
       messages: 
       output: 
       stacktrace: 
@@ -502,7 +502,7 @@ MonoBehaviour:
       name: OnPushed
       fullName: Crowolf.UnityTests.BasicInputTest.OnPushed
       resultStatus: 1
-      duration: 0.0187382
+      duration: 0.0212788
       messages: 
       output: 
       stacktrace: 
@@ -519,7 +519,7 @@ MonoBehaviour:
       name: OnReleased
       fullName: Crowolf.UnityTests.BasicInputTest.OnReleased
       resultStatus: 1
-      duration: 0.0235161
+      duration: 0.0253847
       messages: 
       output: 
       stacktrace: 
@@ -531,7 +531,7 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1002
       parentUniqueId: UnityTests.dll/Crowolf/UnityTests/[UnityTests][Crowolf.UnityTests.BasicInputTest][suite]
-    m_ResultText: Artem (1.780s)
+    m_ResultText: Artem (1.778s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
@@ -572,7 +572,7 @@ MonoBehaviour:
       name: Artem
       fullName: Artem
       resultStatus: 1
-      duration: 0.1114986
+      duration: 0.057066
       messages: 
       output: 
       stacktrace: 
@@ -588,7 +588,7 @@ MonoBehaviour:
       name: EditModeTests.dll
       fullName: L:/Projects/Crowolf/Grimoire/Artem/Library/ScriptAssemblies/EditModeTests.dll
       resultStatus: 1
-      duration: 0.0746271
+      duration: 0.0362468
       messages: 
       output: 
       stacktrace: 
@@ -604,7 +604,7 @@ MonoBehaviour:
       name: Crowolf
       fullName: Crowolf
       resultStatus: 1
-      duration: 0.0735353
+      duration: 0.0357673
       messages: 
       output: 
       stacktrace: 
@@ -620,7 +620,7 @@ MonoBehaviour:
       name: EditModeTests
       fullName: Crowolf.EditModeTests
       resultStatus: 1
-      duration: 0.0730306
+      duration: 0.0319682
       messages: 
       output: 
       stacktrace: 
@@ -636,7 +636,7 @@ MonoBehaviour:
       name: ExtensionTests
       fullName: Crowolf.EditModeTests.ExtensionTests
       resultStatus: 1
-      duration: 0.0680133
+      duration: 0.0276753
       messages: 
       output: 
       stacktrace: 
@@ -652,7 +652,7 @@ MonoBehaviour:
       name: VectorExtensionTests
       fullName: Crowolf.EditModeTests.ExtensionTests.VectorExtensionTests
       resultStatus: 1
-      duration: 0.0618402
+      duration: 0.023775
       messages: 
       output: 
       stacktrace: 
@@ -668,7 +668,7 @@ MonoBehaviour:
       name: Vector2ReplaceTest
       fullName: Crowolf.EditModeTests.ExtensionTests.VectorExtensionTests.Vector2ReplaceTest
       resultStatus: 1
-      duration: 0.0276578
+      duration: 0.0083797
       messages: 
       output: 
       stacktrace: 
@@ -685,7 +685,7 @@ MonoBehaviour:
       name: Vector3ReplaceTest
       fullName: Crowolf.EditModeTests.ExtensionTests.VectorExtensionTests.Vector3ReplaceTest
       resultStatus: 1
-      duration: 0.0043002
+      duration: 0.0032343
       messages: 
       output: 
       stacktrace: 
@@ -702,7 +702,7 @@ MonoBehaviour:
       name: Vector4ReplaceTest
       fullName: Crowolf.EditModeTests.ExtensionTests.VectorExtensionTests.Vector4ReplaceTest
       resultStatus: 1
-      duration: 0.0047886
+      duration: 0.0038029
       messages: 
       output: 
       stacktrace: 
@@ -714,12 +714,12 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: EditModeTests.dll/Crowolf/EditModeTests/ExtensionTests/[EditModeTests][Crowolf.EditModeTests.ExtensionTests.VectorExtensionTests][suite]
-    m_ResultText: VectorExtensionTests (0.062s)
+    m_ResultText: Artem (0.057s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 89dfdf2c
-      m_LastClickedID: 752869257
+      m_SelectedIDs: 0d4d7279
+      m_LastClickedID: 2037533965
       m_ExpandedIDs: e19b5095bc1b99b07108e3cdaa4fe30f89dfdf2cd9bead5d016b61770d4d7279caffb47affffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -787,22 +787,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Plugins
+    - Assets/Scripts/UnityTests/EditModeTests
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Plugins
+  - Assets/Scripts/UnityTests/EditModeTests
   m_LastFoldersGridSize: -1
   m_LastProjectPath: L:\Projects\Crowolf\Grimoire\Ars
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 525a0000
-    m_LastClickedID: 23122
-    m_ExpandedIDs: 000000004c5a00004e5a0000505a0000525a0000545a00006a5a000000ca9a3b
+    m_SelectedIDs: b65a0000
+    m_LastClickedID: 23222
+    m_ExpandedIDs: 00000000385a00003a5a00003c5a00003e5a0000405a0000565a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -830,7 +830,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004c5a00004e5a0000505a0000525a0000545a0000
+    m_ExpandedIDs: 00000000385a00003a5a00003c5a00003e5a0000405a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -857,7 +857,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -960,7 +960,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 06fbffff
+      m_ExpandedIDs: a4f5ffffd4f5ffff14f6ffff8cf7ffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
