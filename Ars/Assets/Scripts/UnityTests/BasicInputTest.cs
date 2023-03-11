@@ -10,6 +10,7 @@ using System.Linq;
 using UniRx.Triggers;
 using Crowolf.Ars.Utilities;
 using System;
+using Crowolf.Cerebrum;
 
 namespace Crowolf.UnityTests
 {
