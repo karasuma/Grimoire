@@ -11,8 +11,7 @@ ars-test-job:
 cerebrum-test-job:
     stage: test
     script:
-        - dotnet restore
-        - cd Cerebrum/CSharpTest
+        - cd Cerebrum
         - dotnet test
         - cd ../
       
