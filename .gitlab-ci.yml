@@ -1,0 +1,19 @@
+stages:
+    - test
+
+ars-test-job:
+    stage: test
+    script:
+        - cd Ars
+        - echo "Ars doesn't test for now."
+        - cd ../
+
+cerebrum-test-job:
+    image: microsoft/dotnet:sdk
+    stage: test
+    script:
+        - dotnet restore
+        - cd Cerebrum/CSharpTest
+        - dotnet test
+        - cd ../
+      
