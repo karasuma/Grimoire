@@ -9,7 +9,6 @@ ars-test-job:
         - cd ../
 
 cerebrum-test-job:
-    image: microsoft/dotnet:sdk
     stage: test
     script:
         - dotnet restore
