@@ -1,0 +1,17 @@
+stages:
+    - test
+
+ars-test-job:
+    stage: test
+    script:
+        - cd Ars
+        - echo "Ars doesn't test for now."
+        - cd ../
+
+cerebrum-test-job:
+    stage: test
+    script:
+        - cd Cerebrum
+        - dotnet test
+        - cd ../
+      
