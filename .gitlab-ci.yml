@@ -1,5 +1,6 @@
 stages:
     - test
+    - build
 
 ars-test-job:
     stage: test
@@ -15,3 +16,21 @@ cerebrum-test-job:
         - dotnet test
         - cd ../
       
+ars-build-job:
+    stage: build
+    script:
+        - cd Ars
+        - echo "Ars doesn't build for now."
+        - cd ../
+
+cerebrum-build-job:
+    stage: build
+    script:
+        - cd Cerebrum
+        - dotnet build -c Release
+        - cd ../
+        - mv Cerebrum/CSharpTest/bin/Release/ Artifact
+    artifacts:
+        paths: 
+            - Artifact/
+        name: "Cerebrum-$CI_COMMIT_REF_NAME"
