@@ -33,10 +33,10 @@ ars-build-job:
 cerebrum-build-job:
     stage: build
     script:
-        - cd Cerebrum/CSharpTest
-        - dotnet build CSharpTest.csproj -c Release
+        - cd Cerebrum/CSharp
+        - dotnet build CSharp.csproj -c Release
         - cd ../../
-        - mv Cerebrum/CSharpTest/bin/Release/ Artifact
+        - mv Cerebrum/CSharp/bin/Release/ Artifact
     artifacts:
         paths: 
             - Artifact/
